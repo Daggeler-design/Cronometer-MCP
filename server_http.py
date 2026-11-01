@@ -11,6 +11,7 @@ import os
 import uvicorn
 
 import cronometer_mcp_server as server
+import micros  # registers get_daily_micros
 
 secret = os.environ.get("MCP_PATH_SECRET", "").strip()
 if len(secret) < 24:
