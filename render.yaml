@@ -1,0 +1,18 @@
+services:
+  - type: web
+    name: cronometer-mcp
+    runtime: python
+    plan: free
+    buildCommand: pip install -r requirements.txt
+    startCommand: python server_http.py
+    envVars:
+      - key: PYTHON_VERSION
+        value: 3.12.7
+      - key: TZ
+        value: America/New_York
+      - key: MCP_PATH_SECRET
+        generateValue: true
+      - key: CRONOMETER_USERNAME
+        sync: false
+      - key: CRONOMETER_PASSWORD
+        sync: false
